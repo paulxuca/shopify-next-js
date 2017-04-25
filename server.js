@@ -8,6 +8,10 @@ app.prepare()
 .then(() => {
   const server = express();
 
+  server.get('/product/:handle', (req, res) => {
+    app.render(req, res, '/product', req.query);
+  });
+
   server.get('*', (req, res) => handler(req, res));
 
   server.listen(3000, err => {

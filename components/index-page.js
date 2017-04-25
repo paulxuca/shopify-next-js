@@ -1,4 +1,5 @@
 import {style} from 'glamor';
+import Router from 'next/router';
 import ProductImage from './product-image';
 
 const styles = {
@@ -11,12 +12,18 @@ const styles = {
   })
 };
 
+const replaceUrl = handle => Router.replace(`/product/${handle}`);
+
 export default ({products}) => (
   <div {...styles.list}>
-    {products.map(product => (
-      <div key={product.id} {...styles.item}>
-        <ProductImage images={product.images}/>
-      </div>
-    ))}
+    {products.map(product => {
+      return (
+        <a key={product.id} href={`/product/${product.attrs.handle}`}>
+          <div {...styles.item}>
+            <ProductImage images={product.images}/>
+          </div>
+        </a>
+      )
+    })}
   </div>
 );
