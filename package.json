@@ -1,0 +1,17 @@
+{
+    "name": "shop",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "node ./server"
+    },
+    "dependencies": {
+        "express": "^4.15.2",
+        "glamor": "^2.20.24",
+        "next": "^2.2.0",
+        "react": "15.4",
+        "react-dom": "15.4",
+        "shopify-buy": "latest"
+    }
+}
